@@ -12,20 +12,28 @@ import UIKit
 
 class ScoreBoard {
     
-    public static var ScoreLabel:SKLabelNode = SKLabelNode(text: "Score: 99999")
-    public static var LivesLabel:SKLabelNode = SKLabelNode(text: "Lives: 99")
+    public static var ScoreLabel:SKLabelNode = SKLabelNode(text: "Score: 9999")
+    public static var BetLabel:SKLabelNode = SKLabelNode(text: "Bets: 1")
+    public static var CreditsLabel:SKLabelNode = SKLabelNode(text: "Credits: 500")
+
     
     
     // public static variables
     public static var Score:Int = 0 {
         didSet {
-            ScoreLabel.text = "Score: " + String(Score)
+            ScoreLabel.text = String(Score)
         }
     }
     
-    public static var Lives:Int = 5 {
+    public static var Bet:Int = 1 {
         didSet {
-            LivesLabel.text = "Lives: " + String(Lives)
+            BetLabel.text = String(Bet)
+        }
+    }
+    
+    public static var Credits:Int = 500 {
+        didSet {
+            CreditsLabel.text = String(Credits)
         }
     }
     

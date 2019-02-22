@@ -73,20 +73,20 @@ class GameScene: SKScene {
         */
      
         // Label Config and adding to the scene
-        ScoreBoard.LivesLabel.position.x = -screenSize.width + 130.0
-        ScoreBoard.LivesLabel.position.y = screenSize.height - 55.0
+        ScoreBoard.BetLabel.position.x = -25
+        ScoreBoard.BetLabel.position.y = -230.633
         
-        ScoreBoard.LivesLabel.fontColor = UIColor.yellow
-        ScoreBoard.LivesLabel.fontSize = 48.0
-        ScoreBoard.LivesLabel.zPosition = 5
-        ScoreBoard.LivesLabel.fontName = "Arial Bold"
-        ScoreBoard.Lives = 5
+        ScoreBoard.BetLabel.fontColor = UIColor.yellow
+        ScoreBoard.BetLabel.fontSize = 48.0
+        ScoreBoard.BetLabel.zPosition = 5
+        ScoreBoard.BetLabel.fontName = "Arial Bold"
+        ScoreBoard.Bet = 1
         
         
-        addChild(ScoreBoard.LivesLabel)
+        addChild(ScoreBoard.BetLabel)
         
-        ScoreBoard.ScoreLabel.position.x = screenSize.width - 170.0
-        ScoreBoard.ScoreLabel.position.y = screenSize.height - 55.0
+        ScoreBoard.ScoreLabel.position.x = 229.887
+        ScoreBoard.ScoreLabel.position.y = -236.129
         
         ScoreBoard.ScoreLabel.fontColor = UIColor.yellow
         ScoreBoard.ScoreLabel.fontSize = 48.0
@@ -96,6 +96,18 @@ class GameScene: SKScene {
         
         
         addChild(ScoreBoard.ScoreLabel)
+        
+        ScoreBoard.CreditsLabel.position.x = -225.098
+        ScoreBoard.CreditsLabel.position.y = -229.786
+        
+        ScoreBoard.CreditsLabel.fontColor = UIColor.yellow
+        ScoreBoard.CreditsLabel.fontSize = 48.0
+        ScoreBoard.CreditsLabel.zPosition = 5
+        ScoreBoard.CreditsLabel.fontName = "Arial Bold"
+        ScoreBoard.Credits = 500
+        
+        
+        addChild(ScoreBoard.CreditsLabel)
  
  
         /*
