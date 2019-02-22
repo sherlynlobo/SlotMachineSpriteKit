@@ -73,6 +73,7 @@ class GameScene: SKScene {
         */
      
         // Label Config and adding to the scene
+        //Bet Label
         ScoreBoard.BetLabel.position.x = -25
         ScoreBoard.BetLabel.position.y = -230.633
         
@@ -85,6 +86,7 @@ class GameScene: SKScene {
         
         addChild(ScoreBoard.BetLabel)
         
+        //Winnnings Label
         ScoreBoard.ScoreLabel.position.x = 229.887
         ScoreBoard.ScoreLabel.position.y = -236.129
         
@@ -97,6 +99,7 @@ class GameScene: SKScene {
         
         addChild(ScoreBoard.ScoreLabel)
         
+        //Credits Label
         ScoreBoard.CreditsLabel.position.x = -225.098
         ScoreBoard.CreditsLabel.position.y = -229.786
         
@@ -108,6 +111,32 @@ class GameScene: SKScene {
         
         
         addChild(ScoreBoard.CreditsLabel)
+        
+        //Bet1 Label
+        ScoreBoard.Bet1Label.position.x = -258.746
+        ScoreBoard.Bet1Label.position.y = -386.412
+        
+        ScoreBoard.Bet1Label.fontColor = UIColor.black
+        ScoreBoard.Bet1Label.fontSize = 32.0
+        ScoreBoard.Bet1Label.zPosition = 5
+        ScoreBoard.Bet1Label.fontName = "Arial Bold"
+      //  ScoreBoard.Bet1 = 500
+        
+        
+        addChild(ScoreBoard.Bet1Label)
+        
+        //BetMax Label
+        ScoreBoard.BetMaxLabel.position.x = 184
+        ScoreBoard.BetMaxLabel.position.y = -391.257
+        
+        ScoreBoard.BetMaxLabel.fontColor = UIColor.black
+        ScoreBoard.BetMaxLabel.fontSize = 32.0
+        ScoreBoard.BetMaxLabel.zPosition = 5
+        ScoreBoard.BetMaxLabel.fontName = "Arial Bold"
+       // ScoreBoard.BetMax = 100
+        
+        
+        addChild(ScoreBoard.BetMaxLabel)
  
  
         /*
@@ -146,7 +175,15 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        //for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+            for touch in touches {
+                let location = touch.location(in: self)
+                let touchedNode = atPoint(location)
+                if touchedNode.name == "HelloButton" {
+                    // Call the function here.
+                }
+            }
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

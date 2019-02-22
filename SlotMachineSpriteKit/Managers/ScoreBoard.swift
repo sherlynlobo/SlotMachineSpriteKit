@@ -15,6 +15,8 @@ class ScoreBoard {
     public static var ScoreLabel:SKLabelNode = SKLabelNode(text: "Score: 9999")
     public static var BetLabel:SKLabelNode = SKLabelNode(text: "Bets: 1")
     public static var CreditsLabel:SKLabelNode = SKLabelNode(text: "Credits: 500")
+    public static var Bet1Label:SKLabelNode = SKLabelNode(text: "BET 1")
+    public static var BetMaxLabel:SKLabelNode = SKLabelNode(text: "BET Max")
 
     
     
@@ -36,6 +38,19 @@ class ScoreBoard {
             CreditsLabel.text = String(Credits)
         }
     }
+    
+    public static var Bet1:Int = 1 {
+        didSet {
+            Bet1Label.text = String(Bet1)
+        }
+    }
+    public static var BetMax:Int = 100 {
+        didSet {
+            BetMaxLabel.text = String(BetMax)
+        }
+    }
+    
+    
     
     public static var HighScore:Int = 0 {
         didSet {
