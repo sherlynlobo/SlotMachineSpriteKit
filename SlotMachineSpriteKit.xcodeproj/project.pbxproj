@@ -23,6 +23,8 @@
 		E7C3CB3C221F77D600C5A6C7 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3CB3B221F77D600C5A6C7 /* GameProtocol.swift */; };
 		E7C3CB3E221F7A9200C5A6C7 /* Bet1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3CB3D221F7A9200C5A6C7 /* Bet1.swift */; };
 		E7C3CB40221F7AA200C5A6C7 /* BetMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3CB3F221F7AA200C5A6C7 /* BetMax.swift */; };
+		E7C3CB42221F842500C5A6C7 /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E7C3CB41221F842500C5A6C7 /* background_music.mp3 */; };
+		E7C3CB45221F850F00C5A6C7 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3CB44221F850F00C5A6C7 /* ScoreBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		E7C3CB3B221F77D600C5A6C7 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		E7C3CB3D221F7A9200C5A6C7 /* Bet1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bet1.swift; sourceTree = "<group>"; };
 		E7C3CB3F221F7AA200C5A6C7 /* BetMax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetMax.swift; sourceTree = "<group>"; };
+		E7C3CB41221F842500C5A6C7 /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
+		E7C3CB44221F850F00C5A6C7 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		E7C3CB0D221F6E1B00C5A6C7 /* SlotMachineSpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				E7C3CB43221F84EF00C5A6C7 /* Managers */,
 				E7C3CB0E221F6E1B00C5A6C7 /* AppDelegate.swift */,
 				E7C3CB10221F6E1B00C5A6C7 /* GameScene.sks */,
 				E7C3CB12221F6E1B00C5A6C7 /* Actions.sks */,
@@ -84,6 +89,7 @@
 				E7C3CB18221F6E1B00C5A6C7 /* Main.storyboard */,
 				E7C3CB2B221F72C500C5A6C7 /* spin.wav */,
 				E7C3CB2D221F72CE00C5A6C7 /* win.wav */,
+				E7C3CB41221F842500C5A6C7 /* background_music.mp3 */,
 				E7C3CB34221F755D00C5A6C7 /* Objects */,
 				E7C3CB1B221F6E1E00C5A6C7 /* Assets.xcassets */,
 				E7C3CB1D221F6E1E00C5A6C7 /* LaunchScreen.storyboard */,
@@ -103,6 +109,14 @@
 				E7C3CB3F221F7AA200C5A6C7 /* BetMax.swift */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		E7C3CB43221F84EF00C5A6C7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E7C3CB44221F850F00C5A6C7 /* ScoreBoard.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +179,7 @@
 			files = (
 				E7C3CB2E221F72CE00C5A6C7 /* win.wav in Resources */,
 				E7C3CB2C221F72C500C5A6C7 /* spin.wav in Resources */,
+				E7C3CB42221F842500C5A6C7 /* background_music.mp3 in Resources */,
 				E7C3CB1A221F6E1B00C5A6C7 /* Main.storyboard in Resources */,
 				E7C3CB11221F6E1B00C5A6C7 /* GameScene.sks in Resources */,
 				E7C3CB1C221F6E1E00C5A6C7 /* Assets.xcassets in Resources */,
@@ -187,6 +202,7 @@
 				E7C3CB3A221F777500C5A6C7 /* GameObject.swift in Sources */,
 				E7C3CB17221F6E1B00C5A6C7 /* GameViewController.swift in Sources */,
 				E7C3CB38221F765800C5A6C7 /* Spin.swift in Sources */,
+				E7C3CB45221F850F00C5A6C7 /* ScoreBoard.swift in Sources */,
 				E7C3CB0F221F6E1B00C5A6C7 /* AppDelegate.swift in Sources */,
 				E7C3CB3C221F77D600C5A6C7 /* GameProtocol.swift in Sources */,
 			);

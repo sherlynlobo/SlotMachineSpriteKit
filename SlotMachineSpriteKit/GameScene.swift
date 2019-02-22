@@ -35,10 +35,14 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        //For Background Music
+        let backgroundSound = SKAudioNode(fileNamed: "background_music.mp3")
+        self.addChild(backgroundSound)
+        
         screenWidth = frame.width
         screenHeight = frame.height
         
-        // add the ocean1 to scene
+        // add the SlotBackground to scene
         slotBackground = SlotBackground()
         addChild(slotBackground!)
       
@@ -67,7 +71,7 @@ class GameScene: SKScene {
             self.addChild(clouds[index])
         }
         */
-     /*
+     
         // Label Config and adding to the scene
         ScoreBoard.LivesLabel.position.x = -screenSize.width + 130.0
         ScoreBoard.LivesLabel.position.y = screenSize.height - 55.0
@@ -93,7 +97,7 @@ class GameScene: SKScene {
         
         addChild(ScoreBoard.ScoreLabel)
  
- */
+ 
         /*
         // play blackground engine sound
         let engineSound = SKAudioNode(fileNamed: "engine.mp3")
