@@ -15,6 +15,10 @@ import AVFoundation
 let screenSize = UIScreen.main.bounds
 var screenWidth: CGFloat?
 var screenHeight: CGFloat?
+var spinImage1node:SKSpriteNode!
+var spinImage2node:SKSpriteNode!
+var spinImage3node:SKSpriteNode!
+var textures = [SKTexture]()
 
 class GameScene: SKScene {
     
@@ -27,6 +31,11 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
+        
+        
+        spinImage1node = self.childNode(withName: "spinImage1") as? SKSpriteNode
+        spinImage2node = self.childNode(withName: "spinImage2") as? SKSpriteNode
+        spinImage3node = self.childNode(withName: "spinImage3") as? SKSpriteNode
         
         //For Background Music
         let backgroundSound = SKAudioNode(fileNamed: "background_music.mp3")
@@ -62,7 +71,10 @@ class GameScene: SKScene {
         spin?.position.x = -10
         spin?.position.y = -360.228
         spin?.zPosition = 5
+        spin?.name = "spin"
         addChild(spin!)
+        
+        
       
 
 
@@ -110,6 +122,8 @@ class GameScene: SKScene {
         ScoreBoard.IncreaseBet.fontSize = 72.0
         ScoreBoard.IncreaseBet.zPosition = 5
         ScoreBoard.IncreaseBet.fontName = "Arial Bold"
+        ScoreBoard.IncreaseBet.name = "increase"
+
         addChild(ScoreBoard.IncreaseBet)
         
         //DecreaseBet Label
@@ -120,6 +134,8 @@ class GameScene: SKScene {
         ScoreBoard.DecreaseBet.fontSize = 80
         ScoreBoard.DecreaseBet.zPosition = 5
         ScoreBoard.DecreaseBet.fontName = "Arial Bold"
+        ScoreBoard.DecreaseBet.name = "decrease"
+
         addChild(ScoreBoard.DecreaseBet)
         
         //Reset Label
@@ -144,6 +160,15 @@ class GameScene: SKScene {
         ScoreBoard.QuitLabel.fontName = "Arial Bold"
         ScoreBoard.QuitLabel.name = "quit"
         addChild(ScoreBoard.QuitLabel)
+        
+        
+        textures.append(SKTexture(imageNamed: "bar"))
+        textures.append(SKTexture(imageNamed: "cherry"))
+        textures.append(SKTexture(imageNamed: "crown"))
+        textures.append(SKTexture(imageNamed: "lemon"))
+        textures.append(SKTexture(imageNamed: "seven"))
+        textures.append(SKTexture(imageNamed: "dimond"))
+        
      
         /*
         //Bet1 Label
@@ -236,6 +261,51 @@ class GameScene: SKScene {
                     ScoreBoard.Winnings = 0
                     ScoreBoard.Msg = ""
                 }
+                
+                else if touchedNode.name == "increase" {
+                    // Call the function here.
+                    if(ScoreBoard.Bet<ScoreBoard.Credits)    {
+                        ScoreBoard.Bet = ScoreBoard.Bet + 1
+                    }
+                }
+                    
+                else if touchedNode.name == "decrease" {
+                    // Call the function here.
+                    if(ScoreBoard.Bet>1)    {
+                        ScoreBoard.Bet = ScoreBoard.Bet - 1
+                    }
+                }
+                else if touchedNode.name == "spin" {
+                    // Call the function here.
+                 //   self.play(sound: Constant.spin_sound)
+                    
+                    let rand = Int(arc4random_uniform(UInt32(textures.count)))
+                    let rand2 = Int(arc4random_uniform(UInt32(textures.count)))
+                    let rand3 = Int(arc4random_uniform(UInt32(textures.count)))
+                    let texture = textures[rand] as SKTexture
+                    let texture2 = textures[rand2] as SKTexture
+                    let texture3 = textures[rand3] as SKTexture
+                    spinImage1node.texture = texture
+                    spinImage2node.texture = texture2
+                    spinImage3node.texture = texture3
+                    
+                    if (spinImage1node.texture == spinImage2node.texture && spinImage2node.texture == spinImage3node.texture){
+                      //  self.play(sound: Constant.win_sound)
+                        ScoreBoard.Msg = "You Won"
+                        ScoreBoard.Winnings = 100 * ScoreBoard.Credits
+                        ScoreBoard.Credits = 100 * ScoreBoard.Credits
+                    }
+                    else
+                    {
+                        ScoreBoard.Msg = "You Lose"
+                        ScoreBoard.Winnings = 0
+                    }
+                    
+                    if(ScoreBoard.Bet > 0 && ScoreBoard.Credits > 0){
+                        ScoreBoard.Credits = ScoreBoard.Credits - ScoreBoard.Bet
+                    }
+                }
+                
                 
                 
             }
