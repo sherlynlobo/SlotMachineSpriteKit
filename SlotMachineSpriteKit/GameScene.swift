@@ -68,7 +68,7 @@ class GameScene: SKScene {
 
         // Label Config and adding to the scene
         //Bet Label
-        ScoreBoard.BetLabel.position.x = -25
+        ScoreBoard.BetLabel.position.x = -15
         ScoreBoard.BetLabel.position.y = -230.633
         
         ScoreBoard.BetLabel.fontColor = UIColor.yellow
@@ -76,8 +76,6 @@ class GameScene: SKScene {
         ScoreBoard.BetLabel.zPosition = 5
         ScoreBoard.BetLabel.fontName = "Arial Bold"
         ScoreBoard.Bet = 1
-        
-        
         addChild(ScoreBoard.BetLabel)
         
         //Winnnings Label
@@ -89,8 +87,6 @@ class GameScene: SKScene {
         ScoreBoard.ScoreLabel.zPosition = 5
         ScoreBoard.ScoreLabel.fontName = "Arial Bold"
         ScoreBoard.Score = 0
-        
-        
         addChild(ScoreBoard.ScoreLabel)
         
         //Credits Label
@@ -102,9 +98,52 @@ class GameScene: SKScene {
         ScoreBoard.CreditsLabel.zPosition = 5
         ScoreBoard.CreditsLabel.fontName = "Arial Bold"
         ScoreBoard.Credits = 500
-        
-        
         addChild(ScoreBoard.CreditsLabel)
+        
+        
+        
+        //IncreaseBet Label
+        ScoreBoard.IncreaseBet.position.x = -1
+        ScoreBoard.IncreaseBet.position.y = -480.228
+        
+        ScoreBoard.IncreaseBet.fontColor = UIColor.black
+        ScoreBoard.IncreaseBet.fontSize = 72.0
+        ScoreBoard.IncreaseBet.zPosition = 5
+        ScoreBoard.IncreaseBet.fontName = "Arial Bold"
+        addChild(ScoreBoard.IncreaseBet)
+        
+        //DecreaseBet Label
+        ScoreBoard.DecreaseBet.position.x = 40
+        ScoreBoard.DecreaseBet.position.y = -480.228
+        
+        ScoreBoard.DecreaseBet.fontColor = UIColor.black
+        ScoreBoard.DecreaseBet.fontSize = 80
+        ScoreBoard.DecreaseBet.zPosition = 5
+        ScoreBoard.DecreaseBet.fontName = "Arial Bold"
+        addChild(ScoreBoard.DecreaseBet)
+        
+        //Reset Label
+        ScoreBoard.ResetLabel.position.x = -225.098
+        ScoreBoard.ResetLabel.position.y = -550
+        
+        ScoreBoard.ResetLabel.fontColor = UIColor.white
+        ScoreBoard.ResetLabel.fontSize = 48.0
+        ScoreBoard.ResetLabel.zPosition = 5
+        ScoreBoard.ResetLabel.fontName = "Arial Bold"
+        ScoreBoard.ResetLabel.name = "reset"
+
+        addChild(ScoreBoard.ResetLabel)
+        
+        //Quit Label
+        ScoreBoard.QuitLabel.position.x = 229.887
+        ScoreBoard.QuitLabel.position.y = -550
+        
+        ScoreBoard.QuitLabel.fontColor = UIColor.white
+        ScoreBoard.QuitLabel.fontSize = 48.0
+        ScoreBoard.QuitLabel.zPosition = 5
+        ScoreBoard.QuitLabel.fontName = "Arial Bold"
+        ScoreBoard.QuitLabel.name = "quit"
+        addChild(ScoreBoard.QuitLabel)
      
         /*
         //Bet1 Label
@@ -185,6 +224,19 @@ class GameScene: SKScene {
                    ScoreBoard.Bet = ScoreBoard.Credits
 
                 }
+                else if (touchedNode.name == "quit")
+                {
+                    exit(0)
+                    
+                }
+                else if (touchedNode.name == "reset")
+                {
+                    ScoreBoard.Bet = 1
+                    ScoreBoard.Credits = 500
+                    ScoreBoard.Winnings = 0
+                    ScoreBoard.Msg = ""
+                }
+                
                 
             }
         

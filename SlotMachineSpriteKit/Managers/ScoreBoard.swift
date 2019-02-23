@@ -12,13 +12,21 @@ import UIKit
 
 class ScoreBoard {
     
-    public static var ScoreLabel:SKLabelNode = SKLabelNode(text: "Score: 9999")
-    public static var BetLabel:SKLabelNode = SKLabelNode(text: "Bets: 1")
-    public static var CreditsLabel:SKLabelNode = SKLabelNode(text: "Credits: 500")
-    public static var Bet1Label:SKLabelNode = SKLabelNode(text: "BET 1")
-    public static var BetMaxLabel:SKLabelNode = SKLabelNode(text: "BET Max")
+    public static var ScoreLabel:SKLabelNode = SKLabelNode(text: "9999")
+    public static var BetLabel:SKLabelNode = SKLabelNode(text: "1")
+    public static var CreditsLabel:SKLabelNode = SKLabelNode(text: "500")
+    public static var WinningsLabel:SKLabelNode = SKLabelNode(text: "9999")
+    public static var MsgLabel:SKLabelNode = SKLabelNode(text: "")
 
     
+    public static var Bet1Label:SKLabelNode = SKLabelNode(text: "BET 1")
+    public static var BetMaxLabel:SKLabelNode = SKLabelNode(text: "BET Max")
+    public static var IncreaseBet:SKLabelNode = SKLabelNode(text: "+")
+    public static var DecreaseBet:SKLabelNode = SKLabelNode(text: "-")
+    public static var ResetLabel:SKLabelNode = SKLabelNode(text: "RESET")
+    public static var QuitLabel:SKLabelNode = SKLabelNode(text: "QUIT")
+    
+
     
     // public static variables
     public static var Score:Int = 0 {
@@ -36,6 +44,18 @@ class ScoreBoard {
     public static var Credits:Int = 500 {
         didSet {
             CreditsLabel.text = String(Credits)
+        }
+    }
+    
+    public static var Winnings:Int = 0 {
+        didSet {
+            WinningsLabel.text = String(Winnings)
+        }
+    }
+    
+    public static var Msg:String = "" {
+        didSet {
+            MsgLabel.text = String(Msg)
         }
     }
     /*
