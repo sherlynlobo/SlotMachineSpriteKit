@@ -12,6 +12,12 @@ import GameplayKit
 import UIKit
 import AVFoundation
 
+struct Constant {
+    static let win_sound : String = "win"
+    static let spin_sound : String = "spin"
+    
+}
+
 let screenSize = UIScreen.main.bounds
 var screenWidth: CGFloat?
 var screenHeight: CGFloat?
@@ -21,6 +27,8 @@ var spinImage3node:SKSpriteNode!
 var textures = [SKTexture]()
 
 class GameScene: SKScene {
+    
+    var player : AVAudioPlayer?
     
     var slotBackground: SlotBackground?
     var bet1:Bet1?
@@ -277,8 +285,8 @@ class GameScene: SKScene {
                 }
                 else if touchedNode.name == "spin" {
                     // Call the function here.
-                 //   self.play(sound: Constant.spin_sound)
-                    
+                    self.play(sound: Constant.spin_sound)
+
                     let rand = Int(arc4random_uniform(UInt32(textures.count)))
                     let rand2 = Int(arc4random_uniform(UInt32(textures.count)))
                     let rand3 = Int(arc4random_uniform(UInt32(textures.count)))
@@ -290,10 +298,10 @@ class GameScene: SKScene {
                     spinImage3node.texture = texture3
                     
                     if (spinImage1node.texture == spinImage2node.texture && spinImage2node.texture == spinImage3node.texture){
-                      //  self.play(sound: Constant.win_sound)
+                       self.play(sound: Constant.win_sound)
                         ScoreBoard.Msg = "You Won"
-                        ScoreBoard.Winnings = 100 * ScoreBoard.Credits
-                        ScoreBoard.Credits = 100 * ScoreBoard.Credits
+                        ScoreBoard.Winnings = 5 * ScoreBoard.Credits
+                        ScoreBoard.Credits = 5 * ScoreBoard.Credits
                     }
                     else
                     {
@@ -328,6 +336,13 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         slotBackground?.Update()
         
+    }
+    func play(sound name : String){
+        guard let url = Bundle.main.url(forResource: name, withExtension: "wav") else{
+            return
+        }
+        player = try? AVAudioPlayer(contentsOf: url)
+        player?.play()
     }
     
 }
