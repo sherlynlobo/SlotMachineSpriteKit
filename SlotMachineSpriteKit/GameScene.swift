@@ -169,6 +169,15 @@ class GameScene: SKScene {
         ScoreBoard.QuitLabel.name = "quit"
         addChild(ScoreBoard.QuitLabel)
         
+        //Msg Label
+        ScoreBoard.MsgLabel.position.x = 0
+        ScoreBoard.MsgLabel.position.y = 280
+        
+        ScoreBoard.MsgLabel.fontColor = UIColor.yellow
+        ScoreBoard.MsgLabel.fontSize = 40.0
+        ScoreBoard.MsgLabel.zPosition = 3
+        ScoreBoard.MsgLabel.fontName = "Arial Bold"
+        
         
         textures.append(SKTexture(imageNamed: "bar"))
         textures.append(SKTexture(imageNamed: "cherry"))
