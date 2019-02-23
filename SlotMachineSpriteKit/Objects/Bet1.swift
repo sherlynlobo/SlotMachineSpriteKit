@@ -11,6 +11,7 @@ import SpriteKit
 import GameplayKit
 
 class Bet1 : GameObject {
+    
     // Initializers
     init() {
         // initialize the object with an image
@@ -23,10 +24,9 @@ class Bet1 : GameObject {
     }
     
     override func Start() {
-        zPosition = 0
-        position.y = -548.728
-        position.x = -224.297
-
+       // zPosition = 0
+        //position.y = -548.728
+       // position.x = -224.297
 
                         }
 }

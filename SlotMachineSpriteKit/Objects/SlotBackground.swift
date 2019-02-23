@@ -27,24 +27,5 @@ class SlotBackground : GameObject {
        self.verticalSpeed = 10.0
         self.Reset()
     }
-    /*
-    override func Reset() {
-        self.zPosition = 0
-        self.position.y = 3652
-    }
-    
-    
-    override func CheckBounds() {
-        if(self.position.y <= -2108) {
-            self.Reset()
-        }
-    }
-    
-    override func Update() {
-        self.position.y -= self.verticalSpeed!
-        self.CheckBounds()
-    }
-    
-    */
-    
+
 }

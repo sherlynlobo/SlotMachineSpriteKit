@@ -11,6 +11,8 @@ import SpriteKit
 import GameplayKit
 
 class Spin : GameObject {
+    
+
     // Initializers
     init() {
         // initialize the object with an image
@@ -24,8 +26,8 @@ class Spin : GameObject {
     
     override func Start() {
         
-        self.verticalSpeed = 10.0
-        self.Reset()
+        //self.verticalSpeed = 10.0
+        //self.Reset()
     }
     
 }

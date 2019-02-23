@@ -16,19 +16,12 @@ let screenSize = UIScreen.main.bounds
 var screenWidth: CGFloat?
 var screenHeight: CGFloat?
 
-
 class GameScene: SKScene {
     
     var slotBackground: SlotBackground?
-    /*var plane: Plane?
-    var ocean1: Ocean?
-    var ocean2: Ocean?
-    var island: Island?
-    
-    var clouds: [Cloud] = []
-    var cloudNum: Int = 3
- 
- */
+    var bet1:Bet1?
+    var betMax:BetMax?
+    var spin:Spin?
     
     var degToRad = 0.01745329252
     
@@ -45,33 +38,34 @@ class GameScene: SKScene {
         // add the SlotBackground to scene
         slotBackground = SlotBackground()
         addChild(slotBackground!)
+        
+        
+        //For Bet 1 to scene programatically
+        bet1 = Bet1()
+        bet1?.position.x = -249.48
+        bet1?.position.y = -360
+        bet1?.zPosition = 6
+        bet1?.name = "bet1"
+        addChild(bet1!)
+        
+        
+        //For Bet Max to scene programatically
+        betMax = BetMax()
+        betMax?.position.x = 227.602
+        betMax?.position.y = -360.228
+        betMax?.zPosition = 5
+        betMax?.name = "betMax"
+        addChild(betMax!)
+        
+        //For Spin to scene programatically
+        spin = Spin()
+        spin?.position.x = -10
+        spin?.position.y = -360.228
+        spin?.zPosition = 5
+        addChild(spin!)
       
-        
-        /*
-        // add the ocean2 to scene
-        ocean2 = Ocean()
-        ocean2?.position.y = 772
-        ocean2?.zPosition = 0
-        addChild(ocean2!)
-        
-        island = Island()
-        addChild(island!)
-        
-        // add plane to scene
-        plane = Plane()
-        plane?.position = CGPoint(x: 0.0, y: -500.0)
-        addChild(plane!)
- 
- */
-        
-        // adds multiple clouds to the scene
-     /*   for index in 0...self.cloudNum - 1 {
-            let cloud: Cloud = Cloud()
-            clouds.append(cloud)
-            self.addChild(clouds[index])
-        }
-        */
-     
+
+
         // Label Config and adding to the scene
         //Bet Label
         ScoreBoard.BetLabel.position.x = -25
@@ -111,7 +105,8 @@ class GameScene: SKScene {
         
         
         addChild(ScoreBoard.CreditsLabel)
-        
+     
+        /*
         //Bet1 Label
         ScoreBoard.Bet1Label.position.x = -258.746
         ScoreBoard.Bet1Label.position.y = -386.412
@@ -137,6 +132,8 @@ class GameScene: SKScene {
         
         
         addChild(ScoreBoard.BetMaxLabel)
+ 
+ */
  
  
         /*
@@ -177,11 +174,18 @@ class GameScene: SKScene {
         
         //for t in touches { self.touchDown(atPoint: t.location(in: self)) }
             for touch in touches {
-                let location = touch.location(in: self)
-                let touchedNode = atPoint(location)
-                if touchedNode.name == "HelloButton" {
-                    // Call the function here.
+                let locationPosition = touch.location(in: self)
+                let touchedNode = atPoint(locationPosition)
+                if touchedNode.name == "bet1"
+                {
+                    ScoreBoard.Bet = 1
                 }
+                else if (touchedNode.name == "betMax")
+                {
+                   ScoreBoard.Bet = ScoreBoard.Credits
+
+                }
+                
             }
         
     }
@@ -201,20 +205,6 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         slotBackground?.Update()
-        //ocean1?.Update()
-      //  ocean2?.Update()
-        //island?.Update()
-        //plane?.Update()
-        
-        //Collision.check(scene: self, object1: plane!, object2: island!)
-        
-        /*
-        for cloud in clouds {
-          //  cloud.Update()
-            //Collision.check(scene: self, object1: plane!, object2: cloud)
-        }
-        */
-        
         
     }
     

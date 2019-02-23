@@ -38,18 +38,18 @@ class ScoreBoard {
             CreditsLabel.text = String(Credits)
         }
     }
-    
+    /*
     public static var Bet1:Int = 1 {
         didSet {
             Bet1Label.text = String(Bet1)
         }
     }
-    public static var BetMax:Int = 100 {
+    public static var BetMax:Int = 500 {
         didSet {
             BetMaxLabel.text = String(BetMax)
         }
     }
-    
+    */
     
     
     public static var HighScore:Int = 0 {
